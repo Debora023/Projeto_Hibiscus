@@ -1,5 +1,6 @@
-export interface Cliente {
+export interface Cupons {
     id?: number;
-    email: string;
-    numero: string;
+    codigo: string;
+    desconto: number;
+    validade: Date;
 }

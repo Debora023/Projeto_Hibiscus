@@ -1,19 +1,4 @@
-import Database from "better-sqlite3";
-import path from "path";
-import fs from "fs";
-
-const dbPath = path.resolve(__dirname, "../../database.db");
-const schemaPath = path.resolve(__dirname, "./schema.sql");
-const db = new Database(dbPath);
-const schema = fs.readFileSync(schemaPath, "utf-8");
-
-db.exec(schema);
-export default db;
-
-db.pragma("foreign_keys = ON");
-
-db.exec(`
-  CREATE TABLE  IF NOT EXISTS Cliente(
+CREATE TABLE  IF NOT EXISTS Cliente(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   email VARCHAR(100) UNIQUE,
   numero VARCHAR(20) UNIQUE
@@ -83,6 +68,3 @@ CREATE TABLE cupons (
   desconto DECIMAL(3,2),
   validade DATE
   );
-`);
-
-export default db;
