@@ -1,7 +1,7 @@
 import { app } from "../server";
-import { ClienteRepository } from "../repositories/ClienteRepository";
+import { ClienteRepository } from "../Repositories/Cliente";
 
-export function ClienteController() {
+export function ClienteControllers() {
   const repository = new ClienteRepository();
 
   app.get("/clientes", (req, res) => {

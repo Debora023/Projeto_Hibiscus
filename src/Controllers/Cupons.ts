@@ -1,7 +1,7 @@
 import { app } from "../server";
-import { CuponsRepository } from "../repositories/CuponsRepository";
+import { CuponsRepository } from "../Repositories/Cupons";
 
-export function ClienteController() {
+export function CuponsController() {
   const repository = new CuponsRepository();
 
   app.get("/Cupons", (req, res) => {

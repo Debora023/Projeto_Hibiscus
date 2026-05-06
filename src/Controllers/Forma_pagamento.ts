@@ -1,10 +1,10 @@
 import { app } from "../server";
-import { forma_de_pagamentoRepository } from "../repositories/Forma_de_pagamentoRepository";
+import { Forma_pagamentoRepository } from "../Repositories/Forma_pagamento";
 
-export function formaDePagamentoController() {
-  const repository = new forma_de_pagamentoRepository();
+export function Forma_pagamentoControllers() {
+  const repository = new Forma_pagamentoRepository();
 
-  app.get("/formas-de-pagamento", (req, res) => {
+  app.get("/forma-pagamento", (req, res) => {
     const { tipo_De_pagamento } = req.query;
 
     if (tipo_De_pagamento) {
@@ -18,14 +18,14 @@ export function formaDePagamentoController() {
     res.json(repository.listar());
   });
 
-  app.get("/formas-de-pagamento/:id", (req, res) => {
+  app.get("/forma-pagamento/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const formaDePagamento = repository.buscarPorId(id);
     if (!formaDePagamento) return res.status(404).json({ erro: "Forma de pagamento nao encontrada" });
     res.json(formaDePagamento);
   });
 
-  app.post("/formas-de-pagamento", (req, res) => {
+  app.post("/forma-pagamento", (req, res) => {
     try {
       const { tipo_De_pagamento } = req.body;
 

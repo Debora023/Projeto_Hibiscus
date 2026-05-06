@@ -1,7 +1,7 @@
 import { app } from "../server";
-import { AreaDoUsuarioRepository } from "../repositories/area_do_usuarioRepository";
+import { AreaDoUsuarioRepository } from "../Repositories/Areausuario";
 
-export function areaDoUsuarioController() {
+export function Area_usuarioControllers() {
   const repository = new AreaDoUsuarioRepository();
 
   app.get("/areas-do-usuario", (req, res) => {

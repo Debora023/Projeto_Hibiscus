@@ -1,4 +1,5 @@
-export interface forma_de_pagamento{
+export interface itens_pedido{
     id?: number;
-    tipo_De_pagamento: "pix" | "Débito" | "Crédito" | "Boleto";
+    quantidade: number;
+    preco: number;
 }

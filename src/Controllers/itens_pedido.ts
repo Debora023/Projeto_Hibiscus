@@ -1,7 +1,7 @@
 import { app } from "../server";
-import { itens_pedidoRepository } from "../repositories/itens_pedidoRepository";
+import { itens_pedidoRepository } from "../Repositories/itens_pedido";
 
-export function itensPedidoController() {
+export function itens_PedidoControllers() {
   const repository = new itens_pedidoRepository();
 
   app.get("/itens-pedido", (req, res) => {

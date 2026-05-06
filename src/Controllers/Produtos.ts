@@ -1,7 +1,7 @@
 import { app } from "../server";
-import { produtosRepository } from "../repositories/produtosRepository";
+import { produtosRepository } from "../Repositories/Produtos";
 
-export function produtosController() {
+export function ProdutosControllers() {
   const repository = new produtosRepository();
 
   app.get("/produtos", (req, res) => {

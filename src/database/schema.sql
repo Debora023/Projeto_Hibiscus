@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS  produtos(
 );
 
 
-CREATE TABLE forma_de_pagamento(
+CREATE TABLE  IF NOT EXISTS forma_de_pagamento(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   tipo_de_pagamento VARCHAR(20)
 );
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS itens_pedido(
   FOREIGN KEY (produto_id) REFERENCES produtos(id)
 );
 
-CREATE TABLE cupons (
+CREATE TABLE  IF NOT EXISTS cupons (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   codigo VARCHAR(20) UNIQUE, 
   desconto DECIMAL(3,2),
