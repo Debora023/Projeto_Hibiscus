@@ -7,6 +7,7 @@ import { Forma_pagamentoControllers } from "./Controllers/Forma_pagamento";
 import { itens_PedidoControllers } from "./Controllers/itens_pedido";
 import { PedidoControllers } from "./Controllers/Pedido";
 import { Status_PedidoControllers } from "./Controllers/Status_Pedido";
+import { CategoriaControllers } from "./Controllers/Categoria";
 
 export const app = express();
 
@@ -19,6 +20,7 @@ Forma_pagamentoControllers();
 itens_PedidoControllers();
 PedidoControllers();
 Status_PedidoControllers();
+CategoriaControllers();
 
 
   
