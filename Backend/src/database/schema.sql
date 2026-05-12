@@ -16,18 +16,19 @@ CREATE TABLE IF NOT EXISTS area_do_usuario(
   FOREIGN KEY (cliente_id) REFERENCES Cliente(id)
 );
 
-CREATE TABLE IF NOT EXISTS  produtos(
+CREATE TABLE IF NOT EXISTS categoria (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  nome VARCHAR(500) NOT NULL,
-  valor DECIMAL(6,2) NOT NULL,
-  tamanho VARCHAR(2),
-  categoria_id INTEGER NOT NULL,
-  cor VARCHAR(100),
-
-
-  FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+  nome VARCHAR(200) NOT NULL,
+  descricao VARCHAR(500)
 );
 
+CREATE TABLE IF NOT EXISTS produto (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(200) NOT NULL,
+  preco REAL,
+  categoria_id INTEGER,
+  FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+);
 
 CREATE TABLE  IF NOT EXISTS forma_de_pagamento(
   id INTEGER PRIMARY KEY AUTOINCREMENT,

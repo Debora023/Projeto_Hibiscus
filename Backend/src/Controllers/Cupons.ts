@@ -8,7 +8,7 @@ export function CuponsController() {
     const { codigo } = req.query;
 
     if (codigo) {
-      const Cupons = repository.buscarPor(codigo as string);
+      const Cupons = repository.buscarPorCodigo(codigo as string);
       if (!Cupons) return res.status(404).json({ erro: "Código invalido" });
       return res.json(Cupons);
     }
