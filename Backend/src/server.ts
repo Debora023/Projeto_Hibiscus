@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import { ClienteControllers } from "./Controllers/Cliente";
 import { ProdutosControllers } from "./Controllers/Produtos";
@@ -11,8 +12,11 @@ import { CategoriaControllers } from "./Controllers/Categoria";
 
 export const app = express();
 
+// middlewares
+app.use(cors());
 app.use(express.json());
 
+// rotas/controllers
 ClienteControllers();
 ProdutosControllers();
 Area_usuarioControllers();
@@ -22,9 +26,7 @@ PedidoControllers();
 Status_PedidoControllers();
 CategoriaControllers();
 
-
-  
-
+// start server (coloque isso aqui OU em outro arquivo separado tipo server.ts)
 app.listen(3000, () => {
   console.log("Servidor rodando em http://localhost:3000");
 });
